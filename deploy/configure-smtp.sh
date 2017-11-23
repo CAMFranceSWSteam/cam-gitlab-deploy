@@ -6,7 +6,7 @@ cp /etc/gitlab/gitlab.rb /etc/gitlab/gitlab.rb.old
 sed -i -e '/\bsmtp_enable\b/s/^# //' /etc/gitlab/gitlab.rb
 sed -i -e '/\bsmtp_address\b/s/^# //' -e 's/"smtp.server"/"smtp1.hpe.com"/' /etc/gitlab/gitlab.rb
 sed -i -e '/\bsmtp_port\b/s/^# //' -e 's/ = 465/ = 25/' /etc/gitlab/gitlab.rb
-sed -i -e '/\bsmtp_domain\b/s/^# //' -e 's/example.com/hpe.com/' /etc/gitlab/gitlab.rb
+sed -i -e '/\bsmtp_domain\b/s/^# //' -e 's/"example.com"/"hpe.com"/' /etc/gitlab/gitlab.rb
 sed -i -e '/\bsmtp_enable_starttls_auto\b/s/^# //' /etc/gitlab/gitlab.rb
 sed -i -e '/\bsmtp_tls\b/s/^# //' /etc/gitlab/gitlab.rb
 sed -i -e '/\bgitlab_email_enabled\b/s/^# //' /etc/gitlab/gitlab.rb
