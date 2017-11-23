@@ -10,8 +10,10 @@ sed -i -e '/\bsmtp_domain\b/s/^# //' -e 's/example.com/hpe.com/' /etc/gitlab/git
 sed -i -e '/\bsmtp_enable_starttls_auto\b/s/^# //' /etc/gitlab/gitlab.rb
 sed -i -e '/\bsmtp_tls\b/s/^# //' /etc/gitlab/gitlab.rb
 sed -i -e '/\bgitlab_email_enabled\b/s/^# //' /etc/gitlab/gitlab.rb
-sed -i -e '/\bgitlab_email_from\b/s/^# //' -e 's/example@example.com/gitlab.shared.bsa.lab@hpe.com/' /etc/gitlab/gitlab.rb
-sed -i -e '/\bgitlab_email_reply_to\b/s/^# //' -e 's/noreply@example.com/noreply.gitlab.shared.bsa.lab@hpe.com/' /etc/gitlab/gitlab.rb
+sed -i -e '/\bgitlab_email_from\b/s/^# //' -e 's/\bexample@example.com\b/gitlab.shared.bsa.lab@hpe.com/' /etc/gitlab/gitlab.rb
+sed -i -e '/\bgitlab_email_reply_to\b/s/^# //' -e 's/\bnoreply@example.com\b/noreply.gitlab.shared.bsa.lab@hpe.com/' /etc/gitlab/gitlab.rb
 sed -i -e '/\bgitlab_email_display_name\b/s/^# //' -e "s/= 'Example'/='CAM Shared GitLab'/" /etc/gitlab/gitlab.rb
 
 gitlab-ctl reconfigure
+
+#Notify.test_email('tjl@hpe.com', 'Message Subject', 'Message Body').deliver_now
