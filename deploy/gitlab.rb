@@ -203,8 +203,8 @@ gitlab_rails['gitlab_email_reply_to'] = 'noreply.gitlab.shared.bsa.lab@hpe.com'
      host: 'dc.bsa.lab'
      port: 389
      uid: 'userPrincipalName'
-     bind_dn: 'CN=gitlab.connect,CN=Users,DC=bsa,DC=lab'
-     password: 'HP1nvent!2017'
+     bind_dn: '[[[LDAP_ACCOUNT]]]'
+     password: '[[[LDAP_PASSWORD]]]'
      encryption: 'plain' # "start_tls" or "simple_tls" or "plain"
      verify_certificates: true
      active_directory: true
